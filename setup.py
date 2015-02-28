@@ -32,7 +32,7 @@ class CheckVersion(Command):
         man_re = re.compile(r'^\.TH.+[\s"]+' + __version__ + r'[\s"]+',
                             re.MULTILINE | re.IGNORECASE)
         for filename, regex in (
-                ('README.txt', readme_re),
+                ('README.md', readme_re),
                 ('doc/galileo.1', man_re),
                 ('doc/galileorc.5', man_re)):
             with open(filename) as f:
@@ -40,7 +40,7 @@ class CheckVersion(Command):
             if regex.search(content) is None:
                 raise ValueError('file %s mention the wrong version' % filename)
 
-with open('README.txt') as file:
+with open('README.md') as file:
     long_description = file.read()
 
 setup(

@@ -7,6 +7,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+build/
 env/
 galileo/build/
 develop-eggs/
